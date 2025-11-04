@@ -17,6 +17,11 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -31,6 +36,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DiceRollTheme {
+                var diceOneImage by remember { mutableStateOf(R.drawable.dice3) }
+                var diceTwoImage by remember { mutableStateOf(R.drawable.dice4) }
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.Center,
@@ -39,18 +46,41 @@ class MainActivity : ComponentActivity() {
                 {
                     Row {
                         Image(
-                            painter = painterResource(id = R.drawable.dice1),
+                            painter = painterResource(id = diceOneImage),
                             contentDescription = "Dice Image"
                         )
                         Spacer(modifier = Modifier.width(16.dp))
                         Image(
-                            painter = painterResource(id = R.drawable.dice1),
+                            painter = painterResource(id = diceTwoImage),
                             contentDescription = "Dice Image"
                         )
                     }
                     Spacer(modifier = Modifier.height(16.dp ))
                     Button(onClick = {
-                        rollDice()
+                        val dice1 = Dice(6)
+                        val dice2 = Dice(6)
+                        val roll1 = dice1.roll()
+                        val roll2 = dice2.roll()
+
+                        when (roll1)
+                        {
+                            1 -> diceOneImage = R.drawable.dice1
+                            2 -> diceOneImage = R.drawable.dice2
+                            3 -> diceOneImage = R.drawable.dice3
+                            4 -> diceOneImage = R.drawable.dice4
+                            5 -> diceOneImage = R.drawable.dice5
+                            6 -> diceOneImage = R.drawable.dice6
+                        }
+
+                        when (roll2)
+                        {
+                            1 -> diceTwoImage = R.drawable.dice1
+                            2 -> diceTwoImage = R.drawable.dice2
+                            3 -> diceTwoImage = R.drawable.dice3
+                            4 -> diceTwoImage = R.drawable.dice4
+                            5 -> diceTwoImage = R.drawable.dice5
+                            6 -> diceTwoImage = R.drawable.dice6
+                        }
                     }) {
                         Text(text = "Roll Dice")
                     }
@@ -64,9 +94,4 @@ class Dice (val numberOfSides: Int) {
     fun roll(): Int{
         return(1..numberOfSides).random()
     }
-}
-
-fun rollDice() {
-    val dice1 = Dice(6)
-    val roll = dice1.roll()
 }
