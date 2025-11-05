@@ -6,13 +6,17 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -36,54 +40,76 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DiceRollTheme {
-                var diceOneImage by remember { mutableStateOf(R.drawable.dice3) }
-                var diceTwoImage by remember { mutableStateOf(R.drawable.dice4) }
+                var diceOneImage by remember { mutableStateOf(R.drawable.dice1) }
+                var diceTwoImage by remember { mutableStateOf(R.drawable.dice1) }
+                var previousRolls by remember { mutableStateOf(listOf<Int>()) }
                 Column(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
+                    verticalArrangement = Arrangement.Center
                 )
                 {
-                    Row {
-                        Image(
-                            painter = painterResource(id = diceOneImage),
-                            contentDescription = "Dice Image"
-                        )
-                        Spacer(modifier = Modifier.width(16.dp))
-                        Image(
-                            painter = painterResource(id = diceTwoImage),
-                            contentDescription = "Dice Image"
-                        )
-                    }
-                    Spacer(modifier = Modifier.height(16.dp ))
-                    Button(onClick = {
-                        val dice1 = Dice(6)
-                        val dice2 = Dice(6)
-                        val roll1 = dice1.roll()
-                        val roll2 = dice2.roll()
+                    Column(
+                        modifier = Modifier.align(Alignment.CenterHorizontally)
+                            .weight(1f),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Bottom
 
-                        when (roll1)
-                        {
-                            1 -> diceOneImage = R.drawable.dice1
-                            2 -> diceOneImage = R.drawable.dice2
-                            3 -> diceOneImage = R.drawable.dice3
-                            4 -> diceOneImage = R.drawable.dice4
-                            5 -> diceOneImage = R.drawable.dice5
-                            6 -> diceOneImage = R.drawable.dice6
+                    )
+                    {
+                        Row {
+                            Image(
+                                painter = painterResource(id = diceOneImage),
+                                contentDescription = "Dice Image"
+                            )
+                            Spacer(modifier = Modifier.width(16.dp))
+                            Image(
+                                painter = painterResource(id = diceTwoImage),
+                                contentDescription = "Dice Image"
+                            )
                         }
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Button(onClick = {
+                            val dice1 = Dice(6)
+                            val dice2 = Dice(6)
+                            val roll1 = dice1.roll()
+                            val roll2 = dice2.roll()
 
-                        when (roll2)
+                            when (roll1) {
+                                1 -> diceOneImage = R.drawable.dice1
+                                2 -> diceOneImage = R.drawable.dice2
+                                3 -> diceOneImage = R.drawable.dice3
+                                4 -> diceOneImage = R.drawable.dice4
+                                5 -> diceOneImage = R.drawable.dice5
+                                6 -> diceOneImage = R.drawable.dice6
+                            }
+
+                            when (roll2) {
+                                1 -> diceTwoImage = R.drawable.dice1
+                                2 -> diceTwoImage = R.drawable.dice2
+                                3 -> diceTwoImage = R.drawable.dice3
+                                4 -> diceTwoImage = R.drawable.dice4
+                                5 -> diceTwoImage = R.drawable.dice5
+                                6 -> diceTwoImage = R.drawable.dice6
+                            }
+
+                            previousRolls = previousRolls + (roll1 + roll2)
+                        })
                         {
-                            1 -> diceTwoImage = R.drawable.dice1
-                            2 -> diceTwoImage = R.drawable.dice2
-                            3 -> diceTwoImage = R.drawable.dice3
-                            4 -> diceTwoImage = R.drawable.dice4
-                            5 -> diceTwoImage = R.drawable.dice5
-                            6 -> diceTwoImage = R.drawable.dice6
+                            Text(text = "Roll Dice")
                         }
-                    }) {
-                        Text(text = "Roll Dice")
                     }
+                    Column(modifier = Modifier.weight(1f))
+                    {
+                        Text("Previous Rolls:")
+                        LazyColumn()
+                        {
+                            items(previousRolls.reversed()) { currentRoll ->
+                                Text(text = currentRoll.toString())
+                            }
+                        }
+                    }
+
+
                 }
             }
         }
@@ -91,7 +117,7 @@ class MainActivity : ComponentActivity() {
 }
 
 class Dice (val numberOfSides: Int) {
-    fun roll(): Int{
-        return(1..numberOfSides).random()
+    fun roll(): Int {
+        return (1..numberOfSides).random()
     }
 }
