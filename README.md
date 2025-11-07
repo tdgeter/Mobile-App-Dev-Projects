@@ -2,9 +2,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-
-Here's a blank template to get started. To avoid retyping too much info, do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`, `project_license`
+<p>This project was created so that we could experiment in Android Studio, and practice some of the things we learned about Kotlin. With the aid of a tutorial, we were instructed to create a similar dice app with the added challenge of recreating it with Jetpack Compose, as well as adding our own additional feature.</p>
 
 ## Built With
 
@@ -16,23 +14,30 @@ Here's a blank template to get started. To avoid retyping too much info, do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Clone the repository to you device. From there, open Android studio and go to the location of the repo. Open the app you wish to take a look at be selecting it within Android studio, and it will configure it all for you. From there you can operate the application in an emulator or build an APK file from the source code. 
+Clone the repository to your device. From there, open Android studio and go to the location of the repo. Open the app you wish to take a look at by selecting it within Android studio, and it will configure for you. From there you can operate the application in an emulator or build an APK file from the source code. 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-The applicaiton is simple, and just requires that you press the roll button. Upon clicking, you will begin to generate random rolls from the 2 dice, as well as a list of all previous rolls. 
+<p> The application is simple, and just requires that you press the roll button to produce a random "roll" of the dice. The base implementation only included the image of the dice and the button. </p>
+<div align="center"> <img width="363" height="220" alt="image" src="https://github.com/user-attachments/assets/473e9ce9-de12-4b2e-a54d-12dc746b36ca" />
+ </div>
+
+<p> I chose to go with a "Previous Rolls" list for my additional feature. After this addition, the app could now keep a running list of all rolls made after starting the app. </p>
+<div align="center"> <img align="middle" width="363" height="281" alt="image" src="https://github.com/user-attachments/assets/074637ba-4f29-42c8-be38-fd118cdac6d9" />
+</div>
+
 
 <!-- POTENTIAL FEATURES -->
 ## Potential Features
 
-- Dice Seleciton: Select from different dice (D4, D6, ect,.)
+- Dice Selection: Select from different dice (D4, D6, etc.)
 - Quantity of Dice: For example 1xD4, 2xD6
 - Multi-Dice Rolls: 1xD4 with 2xD6 together. 
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-- Codex Creator his playlist on building a Dice Roll app are the basis of this project.
+- Codex Creator his playlist on building a Dice Roll app are the basis of this project. <br>
   https://youtube.com/playlist?list=PLsF3G8o7POZwo9bBmt8l9aFY9b94mJc6A&si=IhTUEmCBLm64cDO2
-- Philipp Lackner and his Jetpack Compuse crash course
+- Philipp Lackner and his Jetpack Compose crash course <br>
   https://www.youtube.com/watch?v=6_wK_Ud8--0
