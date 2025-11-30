@@ -1,8 +1,8 @@
-# Dice Roll Application
+# To Do Application
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<p>This project was created so that we could experiment in Android Studio, and practice some of the things we learned about Kotlin. With the aid of a tutorial, we were instructed to create a similar dice app with the added challenge of recreating it with Jetpack Compose, as well as adding our own additional feature.</p>
+<p>This project was created so that we could experiment in Android Studio, and practice some of the things we learned about Kotlin. In addition, we were allowed to use the base build of the app given to us by our professor so that we could get exposure to the MVVM architecture.</p>
 
 ## Built With
 
@@ -19,11 +19,11 @@ Clone the repository to your device. From there, open Android studio and go to t
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-<p> The application is simple, and just requires that you press the roll button to produce a random "roll" of the dice. The base implementation only included the image of the dice and the button. </p>
+<p> The application has a simple UI. You just simply type into the text field the to do item you wish to add. </p>
 <div align="center"> <img width="363" height="220" alt="image" src="https://github.com/user-attachments/assets/473e9ce9-de12-4b2e-a54d-12dc746b36ca" />
  </div>
 
-<p> I chose to go with a "Previous Rolls" list for my additional feature. After this addition, the app could now keep a running list of all rolls made after starting the app. </p>
+<p> I chose to make a few changes to the over all formating of the to do items by adding items like a date added tracker, as well as a description section that can be edited for each item. In addition, I added a category selection with some preset categories. When the category is changed, the background color of the item is changed.  </p>
 <div align="center"> <img align="middle" width="363" height="281" alt="image" src="https://github.com/user-attachments/assets/074637ba-4f29-42c8-be38-fd118cdac6d9" />
 </div>
 
@@ -31,13 +31,10 @@ Clone the repository to your device. From there, open Android studio and go to t
 <!-- POTENTIAL FEATURES -->
 ## Potential Features
 
-- Dice Selection: Select from different dice (D4, D6, etc.)
-- Quantity of Dice: For example 1xD4, 2xD6
-- Multi-Dice Rolls: 1xD4 with 2xD6 together. 
+- User defined categories and category colors.
+- Due Date and Countdown timer for each item.
+- 
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-- Codex Creator his playlist on building a Dice Roll app are the basis of this project. <br>
-  https://youtube.com/playlist?list=PLsF3G8o7POZwo9bBmt8l9aFY9b94mJc6A&si=IhTUEmCBLm64cDO2
-- Philipp Lackner and his Jetpack Compose crash course <br>
-  https://www.youtube.com/watch?v=6_wK_Ud8--0
+-
