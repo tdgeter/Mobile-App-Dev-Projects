@@ -1,6 +1,6 @@
 [versions]
 # === Core Android & Gradle ===
-agp = "8.13.0"
+agp = "8.13.1"
 kotlin = "2.0.21"
 
 # === AndroidX Core ===
@@ -33,6 +33,7 @@ room = "2.6.1"
 # === Optional: Coroutines (recommended) ===
 kotlinxCoroutines = "1.8.1"
 runtimeLivedata = "1.9.4"
+uiGraphics = "1.9.5"
 
 [libraries]
 # === Core AndroidX ===
@@ -77,6 +78,7 @@ androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = 
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 androidx-compose-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics", version.ref = "uiGraphics" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
