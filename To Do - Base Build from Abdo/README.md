@@ -14,7 +14,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Clone the repository to your device. From there, open Android studio and go to the location of the repo. Open the folder correspoinding to the app you wish to take a look at by selecting it within Android studio, and it will configure for you. From there you can operate the application in an emulator or build an APK file from the source code. 
+Clone the repository to your device. From there, open Android studio and go to the location of the repo. Open the folder corresponding to the app you wish to take a look at by selecting it within Android studio, and it will configure for you. From there you can operate the application in an emulator or build an APK file from the source code. 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -23,7 +23,7 @@ Clone the repository to your device. From there, open Android studio and go to t
 <div align="center">  <img width="344" height="218" alt="image" src="https://github.com/user-attachments/assets/8a9c27ac-ba71-4e67-9fd9-4948c70bb4a2" />
 </div>
 
-<p> I expanded on the app by adding the descripition attribute to each task item, and also added a "Date Added" line to each task. Along with this, I created a category selector that allows a user to select from a pre-set number of categories. The color of the to-do item will then change based on the category assigned to it. </p>
+<p> I expanded on the app by adding the descripition attribute and a "Date Added" line to each task. Along with this, I created a category selector that allows a user to select from a pre-defined selection of categories. The color of the to-do item will then change based on the category assigned to it. </p>
 <div align="center"> <img width="337" height="673" alt="image" src="https://github.com/user-attachments/assets/891e75d4-8fe9-49b9-85d2-0c309fadf1c1" />
 </div>
 
@@ -38,5 +38,5 @@ Clone the repository to your device. From there, open Android studio and go to t
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 - Thank you Professor Elfikky for the base to-do app.
-- ExposedDropDown documenation
+- ExposedDropDown documentation
   https://composables.com/docs/androidx.compose.material3/material3/components/ExposedDropdownMenuBox
