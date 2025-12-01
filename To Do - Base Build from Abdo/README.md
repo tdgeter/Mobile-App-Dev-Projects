@@ -14,27 +14,29 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Clone the repository to your device. From there, open Android studio and go to the location of the repo. Open the app you wish to take a look at by selecting it within Android studio, and it will configure for you. From there you can operate the application in an emulator or build an APK file from the source code. 
+Clone the repository to your device. From there, open Android studio and go to the location of the repo. Open the folder correspoinding to the app you wish to take a look at by selecting it within Android studio, and it will configure for you. From there you can operate the application in an emulator or build an APK file from the source code. 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-<p> The application has a simple UI. You just simply type into the text field the to do item you wish to add. </p>
-<div align="center"> <img width="363" height="220" alt="image" src="https://github.com/user-attachments/assets/473e9ce9-de12-4b2e-a54d-12dc746b36ca" />
- </div>
+<p> The application has a simple UI. To create a new to-do item, you must type a Task name and description into the text fields and then tap add: </p>
+<div align="center">  <img width="344" height="218" alt="image" src="https://github.com/user-attachments/assets/8a9c27ac-ba71-4e67-9fd9-4948c70bb4a2" />
+</div>
 
-<p> I chose to make a few changes to the over all formating of the to do items by adding items like a date added tracker, as well as a description section that can be edited for each item. In addition, I added a category selection with some preset categories. When the category is changed, the background color of the item is changed.  </p>
-<div align="center"> <img align="middle" width="363" height="281" alt="image" src="https://github.com/user-attachments/assets/074637ba-4f29-42c8-be38-fd118cdac6d9" />
+<p> I expanded on the app by adding the descripition attribute to each task item, and also added a "Date Added" line to each task. Along with this, I created a category selector that allows a user to select from a pre-set number of categories. The color of the to-do item will then change based on the category assigned to it. </p>
+<div align="center"> <img width="337" height="673" alt="image" src="https://github.com/user-attachments/assets/891e75d4-8fe9-49b9-85d2-0c309fadf1c1" />
 </div>
 
 
 <!-- POTENTIAL FEATURES -->
 ## Potential Features
 
-- User defined categories and category colors.
+- User defined categories and category colors rather than presets. 
 - Due Date and Countdown timer for each item.
-- 
+- History of completed Tasks
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
--
+- Thank you Professor Elfikky for the base to-do app.
+- ExposedDropDown documenation
+  https://composables.com/docs/androidx.compose.material3/material3/components/ExposedDropdownMenuBox
