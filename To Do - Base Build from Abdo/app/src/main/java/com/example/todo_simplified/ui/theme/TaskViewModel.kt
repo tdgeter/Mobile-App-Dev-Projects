@@ -19,9 +19,9 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
         allTasks = repository.allTasks
     }
 
-    fun addTask(title: String) {
+    fun addTask(title: String, description: String) {
         viewModelScope.launch {
-            repository.addTask(Task(title = title))
+            repository.addTask(Task(title = title, description = description))
         }
     }
 

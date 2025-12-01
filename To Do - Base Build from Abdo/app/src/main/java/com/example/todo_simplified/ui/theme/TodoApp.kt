@@ -15,13 +15,12 @@ import com.example.todo_simplified.data.Task
 import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.tooling.preview.Preview
 import java.time.LocalDate.now
-
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TodoApp(viewModel: TaskViewModel) {
     val tasks by viewModel.allTasks.observeAsState(emptyList())
     var textState by remember { mutableStateOf(TextFieldValue("")) }
+    var descriptionState by remember { mutableStateOf(TextFieldValue("")) }
 
     Scaffold(
         topBar = { TopAppBar(title = { Text("Simple MVVM Todo") }) }
@@ -32,22 +31,33 @@ fun TodoApp(viewModel: TaskViewModel) {
                 .padding(16.dp)
         ) {
             Row(modifier = Modifier.fillMaxWidth()) {
-                TextField(
-                    value = textState,
-                    onValueChange = { textState = it },
-                    label = { Text("New Task") },
+                Column(
                     modifier = Modifier.weight(1f)
-                )
+                ) {
+                    TextField(
+                        value = textState,
+                        onValueChange = { textState = it },
+                        label = { Text("New Task") },
+                    )
+                    TextField(
+                        value = descriptionState,
+                        onValueChange = { descriptionState = it },
+                        label = { Text("Task Description") },
+                    )
+                }
                 Spacer(modifier = Modifier.width(8.dp))
-                Button(onClick = {
-                    if (textState.text.isNotEmpty()) {
-                        viewModel.addTask(textState.text)
+                Button(
+                    onClick = {
+                    if (textState.text.isNotEmpty() && descriptionState.text.isNotEmpty()) {
+                        viewModel.addTask(textState.text, descriptionState.text)
                         textState = TextFieldValue("")
+                        descriptionState = TextFieldValue("")
                     }
                 }) {
                     Text("Add")
                 }
             }
+
 
             Spacer(modifier = Modifier.height(16.dp))
 
@@ -81,12 +91,12 @@ fun TaskItem(task: Task, onDelete: () -> Unit) {
                     .padding(12.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text("Task:" + task.title)
-                Text("Date Added: " + now().toString())
+                Text("Task: " + task.title)
                 TextButton(onClick = onDelete) { Text("Delete") }
             }
-
-            Text("Description")
+            Text("Description:")
+            Text(task.description + '\n')
+            Text("Date Added: " + now().toString())
         }
     }
 }
